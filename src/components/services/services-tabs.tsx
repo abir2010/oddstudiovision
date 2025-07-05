@@ -2,7 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Camera, Clapperboard, PenTool, BarChart, Sparkles, Rocket } from "lucide-react";
+import { Camera, Clapperboard, PenTool, BarChart, Sparkles, Rocket, Megaphone } from "lucide-react";
 import Image from 'next/image';
 
 const servicesData = {
@@ -56,6 +56,13 @@ const servicesData = {
     video: "https://placehold.co/1280x720.png",
     hint: "planning strategy"
   },
+  onlineMarketing: {
+    label: "Online Marketing",
+    icon: Megaphone,
+    description: "Data-driven online campaigns to boost your reach, engagement, and conversions.",
+    video: "https://placehold.co/1280x720.png",
+    hint: "digital marketing"
+  },
 };
 
 const VideoPlaceholder = ({ src, title, hint }: { src: string; title: string; hint: string }) => (
@@ -73,7 +80,7 @@ const VideoPlaceholder = ({ src, title, hint }: { src: string; title: string; hi
 export default function ServicesTabs() {
   return (
     <Tabs defaultValue="videography" className="w-full">
-      <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 h-auto -mx-1">
+      <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-7 h-auto -mx-1">
         {Object.entries(servicesData).map(([key, { label, icon: Icon }]) => (
           <TabsTrigger key={key} value={key} className="flex flex-col sm:flex-row gap-2 h-auto py-3 text-xs sm:text-sm">
             <Icon className="w-5 h-5" />

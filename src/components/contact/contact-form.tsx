@@ -86,6 +86,7 @@ export function ContactForm() {
                     <SelectItem value="Business Development">Business Development</SelectItem>
                     <SelectItem value="Branding">Branding</SelectItem>
                     <SelectItem value="Strategic Planning">Strategic Planning</SelectItem>
+                    <SelectItem value="Online Marketing">Online Marketing</SelectItem>
                     <SelectItem value="Other">Other</SelectItem>
                     </SelectContent>
                 </Select>

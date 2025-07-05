@@ -9,6 +9,8 @@ const services = [
   { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.' },
   { title: 'Photography', description: 'High-quality imagery that tells your brand’s story with impact.' },
   { title: 'Copywriting', description: 'Persuasive copy that resonates with your audience and drives action.' },
+  { title: 'Strategy & Growth', description: 'Comprehensive strategies for business development, branding, and planning.' },
+  { title: 'Online Marketing', description: 'Data-driven online marketing to boost your reach and conversions.' },
 ];
 
 export default function HomePage() {
@@ -18,7 +20,7 @@ export default function HomePage() {
         title="We Are Odd. We Build Brands."
         subtitle="Odd Studio is a full-service creative agency that partners with ambitious brands to create work that makes a difference. We are strategists, creatives, and producers united by a common passion for building things that matter."
         className="bg-background"
-        imageSrc="https://placehold.co/1200x600.png"
+        imageSrc="https://i.ibb.co/YFsGkYB0/Untitled-design-4.png"
         imageAlt="Creative work showcase"
         imageHint="creative work"
       >
