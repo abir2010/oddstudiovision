@@ -1,6 +1,7 @@
 import HeroSection from '@/components/shared/hero-section';
 import { ContactForm } from '@/components/contact/contact-form';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ContactPage() {
   return (
@@ -41,6 +42,19 @@ export default function ContactPage() {
                             <h3 className="text-lg font-semibold">Office</h3>
                             <p className="text-muted-foreground">123 Creative Lane, Innovation City, 12345</p>
                         </div>
+                    </div>
+                </div>
+                <div className="mt-8 pt-8 border-t">
+                    <h3 className="text-xl font-bold font-headline mb-4">Our Location</h3>
+                    <div className="aspect-video rounded-lg overflow-hidden border">
+                        <Image 
+                            src="https://placehold.co/600x400.png" 
+                            alt="Map to Odd Studio"
+                            width={600}
+                            height={400}
+                            className="w-full h-full object-cover"
+                            data-ai-hint="city map"
+                        />
                     </div>
                 </div>
             </div>
