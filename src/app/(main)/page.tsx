@@ -2,15 +2,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import HeroSection from '@/components/shared/hero-section';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 
 const services = [
-  { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.' },
-  { title: 'Photography', description: 'High-quality imagery that tells your brand’s story with impact.' },
-  { title: 'Copywriting', description: 'Persuasive copy that resonates with your audience and drives action.' },
-  { title: 'Strategy & Branding', description: 'Comprehensive strategies for business development, branding, and strategic planning.' },
-  { title: 'Online Marketing', description: 'Data-driven online marketing to boost your reach and conversions.' },
+  { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.', image: 'https://placehold.co/600x400.png', hint: 'videography setup' },
+  { title: 'Photography', description: 'High-quality imagery that tells your brand’s story with impact.', image: 'https://placehold.co/600x400.png', hint: 'photographer action' },
+  { title: 'Copywriting', description: 'Persuasive copy that resonates with your audience and drives action.', image: 'https://placehold.co/600x400.png', hint: 'writing desk' },
+  { title: 'Strategy & Branding', description: 'Comprehensive strategies for business development, branding, and strategic planning.', image: 'https://placehold.co/600x400.png', hint: 'brand moodboard' },
+  { title: 'Online Marketing', description: 'Data-driven online marketing to boost your reach and conversions.', image: 'https://placehold.co/600x400.png', hint: 'digital analytics' },
 ];
 
 export default function HomePage() {
@@ -40,18 +40,29 @@ export default function HomePage() {
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Core Services</h2>
             <p className="text-muted-foreground mt-2">What we do best to elevate your brand.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {services.map((service) => (
-              <Card key={service.title} className="text-center">
+              <Card key={service.title} className="overflow-hidden group flex flex-col">
+                <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={service.hint}
+                    />
+                </div>
                 <CardHeader>
                   <CardTitle className="font-headline">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button asChild variant="link">
-                    <Link href="/services">Learn More &rarr;</Link>
-                  </Button>
+                <CardContent className="flex-grow">
+                  <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
+                <CardFooter>
+                    <Button asChild variant="link" className="p-0 h-auto">
+                        <Link href="/services">Learn More &rarr;</Link>
+                    </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>
