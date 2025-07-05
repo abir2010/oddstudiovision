@@ -83,9 +83,7 @@ export function ContactForm() {
                     <SelectItem value="Videography">Videography</SelectItem>
                     <SelectItem value="Photography">Photography</SelectItem>
                     <SelectItem value="Copywriting">Copywriting</SelectItem>
-                    <SelectItem value="Business Development">Business Development</SelectItem>
-                    <SelectItem value="Branding">Branding</SelectItem>
-                    <SelectItem value="Strategic Planning">Strategic Planning</SelectItem>
+                    <SelectItem value="Strategy & Branding">Strategy & Branding</SelectItem>
                     <SelectItem value="Online Marketing">Online Marketing</SelectItem>
                     <SelectItem value="Other">Other</SelectItem>
                     </SelectContent>

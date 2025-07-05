@@ -2,7 +2,7 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Camera, Clapperboard, PenTool, BarChart, Sparkles, Rocket, Megaphone } from "lucide-react";
+import { Camera, Clapperboard, PenTool, Rocket, Megaphone } from "lucide-react";
 import Image from 'next/image';
 
 const servicesData = {
@@ -35,26 +35,15 @@ const servicesData = {
     video: "https://placehold.co/1280x720.png",
     hint: "creative writing"
   },
-  businessDev: {
-    label: "Business Development",
-    icon: BarChart,
-    description: "We help you identify new market opportunities, develop strategic partnerships, and create growth plans that are both ambitious and achievable, driving your business forward.",
-    video: "https://placehold.co/1280x720.png",
-    hint: "business chart"
-  },
-  branding: {
-    label: "Branding",
-    icon: Sparkles,
-    description: "A strong brand is more than a logo. We help you build a complete brand identity, from your mission and values to your visual language and tone of voice, that connects with your audience on an emotional level.",
-    video: "https://placehold.co/1280x720.png",
-    hint: "brand design"
-  },
-  strategicPlanning: {
-    label: "Strategic Planning",
+  strategy: {
+    label: "Strategy & Branding",
     icon: Rocket,
-    description: "Our strategic planning services provide a clear roadmap for your marketing efforts. We analyze your market, define your objectives, and create a comprehensive strategy to achieve your long-term goals.",
-    video: "https://placehold.co/1280x720.png",
-    hint: "planning strategy"
+    description: "We offer a unified approach to growth, combining business development, branding, and strategic planning to build a cohesive and powerful brand presence.",
+    subServices: [
+      { title: "Business Development", video: "https://placehold.co/1280x720.png", hint: "business chart" },
+      { title: "Branding", video: "https://placehold.co/1280x720.png", hint: "brand design" },
+      { title: "Strategic Planning", video: "https://placehold.co/1280x720.png", hint: "planning strategy" },
+    ]
   },
   onlineMarketing: {
     label: "Online Marketing",
@@ -80,7 +69,7 @@ const VideoPlaceholder = ({ src, title, hint }: { src: string; title: string; hi
 export default function ServicesTabs() {
   return (
     <Tabs defaultValue="videography" className="w-full">
-      <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 lg:grid-cols-7 h-auto -mx-1">
+      <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 h-auto -mx-1">
         {Object.entries(servicesData).map(([key, { label, icon: Icon }]) => (
           <TabsTrigger key={key} value={key} className="flex flex-col sm:flex-row gap-2 h-auto py-3 text-xs sm:text-sm">
             <Icon className="w-5 h-5" />

@@ -9,7 +9,7 @@ const services = [
   { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.' },
   { title: 'Photography', description: 'High-quality imagery that tells your brand’s story with impact.' },
   { title: 'Copywriting', description: 'Persuasive copy that resonates with your audience and drives action.' },
-  { title: 'Strategy & Growth', description: 'Comprehensive strategies for business development, branding, and planning.' },
+  { title: 'Strategy & Branding', description: 'Comprehensive strategies for business development, branding, and strategic planning.' },
   { title: 'Online Marketing', description: 'Data-driven online marketing to boost your reach and conversions.' },
 ];
 
