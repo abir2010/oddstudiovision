@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, Phone } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -58,9 +58,10 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center justify-end space-x-4">
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="/contact">Get a Quote</Link>
-          </Button>
+          <a href="tel:123-456-7890" className="hidden md:flex items-center gap-2 text-primary font-bold text-sm">
+            <Phone className="h-4 w-4" />
+            <span>(123) 456-7890</span>
+          </a>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -96,9 +97,10 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-auto p-4 border-t">
-                    <Button asChild className="w-full">
-                        <Link href="/contact" onClick={() => setIsOpen(false)}>Get a Quote</Link>
-                    </Button>
+                    <a href="tel:123-456-7890" onClick={() => setIsOpen(false)} className="flex w-full items-center justify-center gap-2 text-primary font-bold">
+                        <Phone className="h-5 w-5" />
+                        <span>(123) 456-7890</span>
+                    </a>
                 </div>
               </div>
             </SheetContent>
