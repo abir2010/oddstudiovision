@@ -23,8 +23,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <div className="mr-4 flex">
+      <div className="container flex h-16 items-center justify-between relative">
+        <div className="flex">
           <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export default function Header() {
             <span className="font-bold font-headline text-lg">Odd Studio</span>
           </Link>
         </div>
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
           {navLinks.map(({ href, label }) => (
             <Link
               key={label}
@@ -57,7 +57,7 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex items-center justify-end space-x-4">
           <Button asChild className="hidden md:inline-flex">
             <Link href="/contact">Get a Quote</Link>
           </Button>
