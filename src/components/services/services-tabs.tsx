@@ -11,10 +11,27 @@ const servicesData = {
     icon: Clapperboard,
     description: "From concept to final cut, we produce high-quality videos that engage, entertain, and inspire action. Our team handles everything from scripting and storyboarding to shooting, editing, and color grading.",
     subServices: [
-      { title: "Corporate Videos", video: "https://placehold.co/1280x720.png", hint: "corporate meeting" },
-      { title: "Commercials & Ads", video: "https://placehold.co/1280x720.png", hint: "television commercial" },
-      { title: "Social Media Content", video: "https://placehold.co/1280x720.png", hint: "social media" },
-      { title: "Event Coverage", video: "https://placehold.co/1280x720.png", hint: "live event" },
+      { 
+        title: "Content",
+        subServices: [
+            { title: "Model-Led Video Promotions", video: "https://placehold.co/1280x720.png", hint: "video promotion" },
+            { title: "Reels and Promo", video: "https://placehold.co/1280x720.png", hint: "social media reel" }
+        ]
+      },
+      { 
+        title: "Beyond Branding",
+        subServices: [
+            { title: "Online Video Commercial", video: "https://placehold.co/1280x720.png", hint: "online commercial" }
+        ]
+      },
+      {
+        title: "Creatives",
+        subServices: [
+            { title: "Motion Graphics", video: "https://placehold.co/1280x720.png", hint: "motion graphics" },
+            { title: "Carousel Creatives", video: "https://placehold.co/1280x720.png", hint: "carousel video" },
+            { title: "Product Videography", video: "https://placehold.co/1280x720.png", hint: "product video" }
+        ]
+      }
     ]
   },
   photography: {
