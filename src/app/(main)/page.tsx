@@ -4,6 +4,7 @@ import HeroSection from '@/components/shared/hero-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
+import ClientCarousel from '@/components/shared/client-carousel';
 
 const services = [
   { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.', image: 'https://placehold.co/600x400.png', hint: 'videography setup' },
@@ -33,6 +34,8 @@ export default function HomePage() {
           </Button>
         </div>
       </HeroSection>
+
+      <ClientCarousel />
 
       <section className="py-24 bg-card">
         <div className="container">
