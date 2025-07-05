@@ -108,7 +108,7 @@ export default function ServicesTabs() {
                                   <AccordionTrigger className="text-lg font-semibold hover:no-underline">{sub.title}</AccordionTrigger>
                                   <AccordionContent>
                                     {sub.subServices ? (
-                                        <Accordion type="single" collapsible className="w-full pl-4 border-l">
+                                        <Accordion type="single" collapsible defaultValue="nested-item-0" className="w-full pl-4 border-l">
                                             {sub.subServices.map((nestedSub, nestedIndex) => (
                                                 <AccordionItem value={`nested-item-${nestedIndex}`} key={nestedSub.title} className="border-b-0">
                                                     <AccordionTrigger>{nestedSub.title}</AccordionTrigger>
