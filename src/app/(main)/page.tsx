@@ -28,30 +28,14 @@ export default function HomePage() {
               <Link href="/services">Our Services</Link>
             </Button>
           </div>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          <div className="mt-12 max-w-5xl mx-auto">
               <Image
-                src="https://placehold.co/600x400.png"
-                alt="Abstract design"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg object-cover aspect-[3/2] w-full"
-                data-ai-hint="abstract design"
-              />
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="Team collaboration"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg object-cover aspect-[3/2] w-full"
-                data-ai-hint="team brainstorming"
-              />
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="Modern branding"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg object-cover aspect-[3/2] w-full"
-                data-ai-hint="vibrant color"
+                src="https://placehold.co/1200x600.png"
+                alt="Creative work showcase"
+                width={1200}
+                height={600}
+                className="rounded-lg shadow-lg object-cover aspect-video w-full"
+                data-ai-hint="creative work"
               />
           </div>
         </>
