@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, Twitter, Linkedin } from 'lucide-react';
 
 const navLinks = [
@@ -20,9 +21,15 @@ export default function Footer() {
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 text-primary"><path d="M12 2a10 10 0 1 0 10 10" /><path d="M12 2a10 10 0 1 0 10 10" /><path d="M22 12a10 10 0 1 0-10 10" /></svg>
-                <span className="font-bold font-headline text-2xl">Odd Studio</span>
+            <Link href="/">
+                <Image
+                    src="https://i.ibb.co/4nQtXqR0/Red-logo-4x.png"
+                    alt="Odd Studio Logo"
+                    width={120}
+                    height={36}
+                    className="h-9 w-auto"
+                    data-ai-hint="logo design"
+                />
             </Link>
             <p className="mt-4 text-muted-foreground text-sm">
               Creative solutions for modern brands.
@@ -61,7 +68,7 @@ export default function Footer() {
               </div>
           </div>
         </div>
-        <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Odd Studio. All rights reserved.</p>
         </div>
       </div>
