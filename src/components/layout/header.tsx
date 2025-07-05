@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -25,22 +26,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between relative">
         <div className="flex">
-          <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6 text-primary"
-            >
-              <path d="M12 2a10 10 0 1 0 10 10" />
-              <path d="M12 2a10 10 0 1 0 10 10" />
-              <path d="M22 12a10 10 0 1 0-10 10" />
-            </svg>
-            <span className="font-bold font-headline text-lg">Odd Studio</span>
+          <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+            <Image
+              src="https://placehold.co/120x32.png"
+              alt="Odd Studio Logo"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+              data-ai-hint="logo design"
+              priority
+            />
           </Link>
         </div>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium absolute left-1/2 -translate-x-1/2">
@@ -76,9 +71,16 @@ export default function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col h-full">
                 <div className="flex justify-start items-center p-4 border-b">
-                   <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-primary"><path d="M12 2a10 10 0 1 0 10 10" /><path d="M12 2a10 10 0 1 0 10 10" /><path d="M22 12a10 10 0 1 0-10 10" /></svg>
-                      <span className="font-bold font-headline text-lg">Odd Studio</span>
+                   <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+                      <Image
+                        src="https://placehold.co/120x32.png"
+                        alt="Odd Studio Logo"
+                        width={120}
+                        height={32}
+                        className="h-8 w-auto"
+                        data-ai-hint="logo design"
+                        priority
+                      />
                    </Link>
                 </div>
                 <nav className="flex flex-col p-4 space-y-4">
