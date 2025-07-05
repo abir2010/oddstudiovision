@@ -4,6 +4,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Camera, Clapperboard, PenTool, Rocket, Megaphone } from "lucide-react";
 import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const servicesData = {
   videography: {
@@ -87,13 +89,18 @@ const servicesData = {
 };
 
 const VideoPlaceholder = ({ src, title, hint }: { src: string; title: string; hint: string }) => (
-    <div className="aspect-video bg-muted rounded-lg flex items-center justify-center relative overflow-hidden shadow-lg">
-        <Image src={src} alt={`Video placeholder for ${title}`} fill className="object-cover" data-ai-hint={hint} />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-            <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm cursor-pointer hover:bg-white/50 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+    <div className="space-y-4">
+        <div className="aspect-video bg-muted rounded-lg flex items-center justify-center relative overflow-hidden shadow-lg">
+            <Image src={src} alt={`Video placeholder for ${title}`} fill className="object-cover" data-ai-hint={hint} />
+            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                <div className="w-16 h-16 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm cursor-pointer hover:bg-white/50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </div>
             </div>
         </div>
+        <Button asChild variant="secondary" className="w-full">
+            <Link href="/portfolio">View Full Work</Link>
+        </Button>
     </div>
 );
 
