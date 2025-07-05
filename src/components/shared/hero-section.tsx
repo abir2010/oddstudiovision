@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import Reveal from './reveal';
 
 type HeroSectionProps = {
   title: ReactNode;
@@ -20,19 +21,23 @@ export default function HeroSection({ title, subtitle, children, className, imag
           src={imageSrc}
           alt={imageAlt || 'Background image'}
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-10 dark:opacity-20"
           data-ai-hint={imageHint}
           priority
         />
       )}
       <div className="container text-center relative z-10">
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-foreground/80">
-          {title}
-        </h1>
-        <p className="max-w-[700px] mx-auto text-black md:text-xl mt-4">
-          {subtitle}
-        </p>
-        {children && <div className="mt-8">{children}</div>}
+        <Reveal>
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-foreground/80">
+            {title}
+          </h1>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="max-w-[700px] mx-auto text-muted-foreground md:text-xl mt-4">
+            {subtitle}
+          </p>
+        </Reveal>
+        {children && <Reveal delay={0.2}>{children}</Reveal>}
       </div>
     </section>
   );

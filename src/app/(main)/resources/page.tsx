@@ -2,6 +2,7 @@ import HeroSection from '@/components/shared/hero-section';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Reveal from '@/components/shared/reveal';
 
 const resources = [
   { title: 'The Ultimate Guide to Video Marketing', date: 'May 20, 2024', description: 'Learn how to leverage video to boost engagement and conversions.' },
@@ -20,21 +21,23 @@ export default function ResourcesPage() {
       />
       <section className="container pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {resources.map((resource) => (
-            <Card key={resource.title} className="flex flex-col">
-              <CardHeader>
-                <CardTitle className="font-headline">{resource.title}</CardTitle>
-                <CardDescription>{resource.date}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{resource.description}</p>
-              </CardContent>
-              <CardFooter>
-                <Button asChild variant="secondary">
-                  <Link href="#">Read More</Link>
-                </Button>
-              </CardFooter>
-            </Card>
+          {resources.map((resource, i) => (
+            <Reveal key={resource.title} delay={i * 0.1}>
+                <Card className="flex flex-col h-full">
+                <CardHeader>
+                    <CardTitle className="font-headline">{resource.title}</CardTitle>
+                    <CardDescription>{resource.date}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{resource.description}</p>
+                </CardContent>
+                <CardFooter>
+                    <Button asChild variant="secondary">
+                    <Link href="#">Read More</Link>
+                    </Button>
+                </CardFooter>
+                </Card>
+            </Reveal>
           ))}
         </div>
       </section>

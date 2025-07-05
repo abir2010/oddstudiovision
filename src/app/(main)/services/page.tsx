@@ -1,5 +1,6 @@
 import HeroSection from '@/components/shared/hero-section';
 import ServicesTabs from '@/components/services/services-tabs';
+import Reveal from '@/components/shared/reveal';
 
 export default function ServicesPage() {
   return (
@@ -10,7 +11,9 @@ export default function ServicesPage() {
         className="bg-background"
       />
       <section className="container pb-24">
-        <ServicesTabs />
+        <Reveal>
+          <ServicesTabs />
+        </Reveal>
       </section>
     </>
   );

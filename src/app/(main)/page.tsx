@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 import ClientCarousel from '@/components/shared/client-carousel';
+import Reveal from '@/components/shared/reveal';
 
 const services = [
   { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.', image: 'https://placehold.co/600x400.png', hint: 'videography setup' },
@@ -35,85 +36,91 @@ export default function HomePage() {
         </div>
       </HeroSection>
 
-      <ClientCarousel />
+      <Reveal>
+        <ClientCarousel />
+      </Reveal>
 
       <section className="py-24 bg-card">
         <div className="container">
-          <div className="text-center mb-12">
+          <Reveal className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold font-headline">Our Core Services</h2>
             <p className="text-muted-foreground mt-2">What we do best to elevate your brand.</p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-            {services.map((service) => (
-              <Card key={service.title} className="overflow-hidden group flex flex-col">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={service.hint}
-                    />
-                </div>
-                <CardHeader>
-                  <CardTitle className="font-headline">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-                <CardFooter>
-                    <Button asChild variant="link" className="p-0 h-auto">
-                        <Link href="/services">Learn More &rarr;</Link>
-                    </Button>
-                </CardFooter>
-              </Card>
+            {services.map((service, i) => (
+              <Reveal key={service.title} delay={0.1 * i}>
+                <Card className="overflow-hidden group flex flex-col h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={service.hint}
+                      />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="font-headline">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{service.description}</p>
+                  </CardContent>
+                  <CardFooter>
+                      <Button asChild variant="link" className="p-0 h-auto">
+                          <Link href="/services">Learn More &rarr;</Link>
+                      </Button>
+                  </CardFooter>
+                </Card>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       <section className="container py-24">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <Image
-              src="https://placehold.co/600x400.png"
-              alt="Strategic Planning"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-lg"
-              data-ai-hint="team collaboration"
-            />
+        <Reveal>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="Strategic Planning"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg"
+                data-ai-hint="team collaboration"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold font-headline">Why Choose Odd?</h2>
+              <p className="text-muted-foreground mt-4 mb-8">
+                We're not just another agency. We are a partner in your success, dedicated to understanding your vision and bringing it to life with creativity and precision.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold">Data-Driven Strategy</h3>
+                    <p className="text-muted-foreground">Our creative decisions are backed by research and analytics to ensure maximum impact.</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold">Transparent Collaboration</h3>
+                    <p className="text-muted-foreground">We believe in open communication, keeping you in the loop every step of the way.</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold">Results-Oriented</h3>
+                    <p className="text-muted-foreground">Your goals are our goals. We focus on delivering measurable results that grow your business.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">Why Choose Odd?</h2>
-            <p className="text-muted-foreground mt-4 mb-8">
-              We're not just another agency. We are a partner in your success, dedicated to understanding your vision and bringing it to life with creativity and precision.
-            </p>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold">Data-Driven Strategy</h3>
-                  <p className="text-muted-foreground">Our creative decisions are backed by research and analytics to ensure maximum impact.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold">Transparent Collaboration</h3>
-                  <p className="text-muted-foreground">We believe in open communication, keeping you in the loop every step of the way.</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <CheckCircle className="w-6 h-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold">Results-Oriented</h3>
-                  <p className="text-muted-foreground">Your goals are our goals. We focus on delivering measurable results that grow your business.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
+import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -28,11 +29,11 @@ export default function Header() {
         <div className="flex">
           <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
             <Image
-              src="https://placehold.co/120x32.png"
+              src="https://i.ibb.co/4nQtXqR0/Red-logo-4x.png"
               alt="Odd Studio Logo"
-              width={120}
-              height={32}
-              className="h-8 w-auto"
+              width={160}
+              height={48}
+              className="h-12 w-auto dark:invert"
               data-ai-hint="logo design"
               priority
             />
@@ -52,11 +53,12 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center justify-end space-x-4">
+        <div className="flex items-center justify-end space-x-2">
           <a href="tel:123-456-7890" className="hidden md:flex items-center gap-2 text-primary font-bold text-sm">
             <Phone className="h-4 w-4" />
             <span>(123) 456-7890</span>
           </a>
+          <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -73,11 +75,11 @@ export default function Header() {
                 <div className="flex justify-start items-center p-4 border-b">
                    <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
                       <Image
-                        src="https://placehold.co/120x32.png"
+                        src="https://i.ibb.co/4nQtXqR0/Red-logo-4x.png"
                         alt="Odd Studio Logo"
                         width={120}
                         height={32}
-                        className="h-8 w-auto"
+                        className="h-8 w-auto dark:invert"
                         data-ai-hint="logo design"
                         priority
                       />
