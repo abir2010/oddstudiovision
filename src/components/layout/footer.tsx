@@ -27,7 +27,7 @@ export default function Footer() {
                     alt="Odd Studio Logo"
                     width={120}
                     height={36}
-                    className="h-9 w-auto"
+                    className="h-12 w-auto"
                     data-ai-hint="logo design"
                 />
             </Link>
