@@ -22,10 +22,27 @@ const servicesData = {
     icon: Camera,
     description: "We capture stunning, professional images that showcase your brand in the best light. Our services cover product photography, corporate headshots, event photography, and more.",
     subServices: [
-      { title: "Product Photography", video: "https://placehold.co/1280x720.png", hint: "product shoot" },
-      { title: "Lifestyle & Branding", video: "https://placehold.co/1280x720.png", hint: "lifestyle photo" },
-      { title: "Corporate Headshots", video: "https://placehold.co/1280x720.png", hint: "professional portrait" },
-      { title: "Architectural & Real Estate", video: "https://placehold.co/1280x720.png", hint: "modern architecture" },
+      { 
+        title: "Content",
+        subServices: [
+            { title: "Model-Led Static Promotions", video: "https://placehold.co/1280x720.png", hint: "model promotion" },
+            { title: "Graphics Design", video: "https://placehold.co/1280x720.png", hint: "graphic design" }
+        ]
+      },
+      { 
+        title: "Brainstorming",
+        subServices: [
+            { title: "Static Commercial Poster", video: "https://placehold.co/1280x720.png", hint: "commercial poster" }
+        ]
+      },
+      {
+        title: "Creation",
+        subServices: [
+            { title: "Logo Design", video: "https://placehold.co/1280x720.png", hint: "logo design" },
+            { title: "Carousel Poster", video: "https://placehold.co/1280x720.png", hint: "carousel poster" },
+            { title: "Product Photography", video: "https://placehold.co/1280x720.png", hint: "product shoot" }
+        ]
+      }
     ]
   },
   copywriting: {
@@ -40,9 +57,7 @@ const servicesData = {
     icon: Rocket,
     description: "We offer a unified approach to growth, combining business development, branding, and strategic planning to build a cohesive and powerful brand presence.",
     subServices: [
-      { title: "Business Development", video: "https://placehold.co/1280x720.png", hint: "business chart" },
-      { title: "Branding", video: "https://placehold.co/1280x720.png", hint: "brand design" },
-      { title: "Strategic Planning", video: "https://placehold.co/1280x720.png", hint: "planning strategy" },
+      { title: "Business Development, Branding, and Strategic Planning", video: "https://placehold.co/1280x720.png", hint: "business strategy" },
     ]
   },
   onlineMarketing: {
@@ -92,7 +107,20 @@ export default function ServicesTabs() {
                               <AccordionItem value={`item-${index}`} key={sub.title}>
                                   <AccordionTrigger className="text-lg font-semibold hover:no-underline">{sub.title}</AccordionTrigger>
                                   <AccordionContent>
-                                      <VideoPlaceholder src={sub.video} title={sub.title} hint={sub.hint} />
+                                    {sub.subServices ? (
+                                        <Accordion type="single" collapsible className="w-full pl-4 border-l">
+                                            {sub.subServices.map((nestedSub, nestedIndex) => (
+                                                <AccordionItem value={`nested-item-${nestedIndex}`} key={nestedSub.title} className="border-b-0">
+                                                    <AccordionTrigger>{nestedSub.title}</AccordionTrigger>
+                                                    <AccordionContent className="pl-4">
+                                                        {nestedSub.video && <VideoPlaceholder src={nestedSub.video} title={nestedSub.title} hint={nestedSub.hint || ''} />}
+                                                    </AccordionContent>
+                                                </AccordionItem>
+                                            ))}
+                                        </Accordion>
+                                    ) : (
+                                        sub.video && <VideoPlaceholder src={sub.video} title={sub.title} hint={sub.hint || ''} />
+                                    )}
                                   </AccordionContent>
                               </AccordionItem>
                           ))}
