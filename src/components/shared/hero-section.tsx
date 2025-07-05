@@ -21,7 +21,7 @@ export default function HeroSection({ title, subtitle, children, className, imag
           src={imageSrc}
           alt={imageAlt || 'Background image'}
           fill
-          className="object-cover opacity-10 dark:opacity-20"
+          className="object-cover opacity-10"
           data-ai-hint={imageHint}
           priority
         />

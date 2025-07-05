@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
-import { ThemeToggle } from './theme-toggle';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -33,7 +32,7 @@ export default function Header() {
               alt="Odd Studio Logo"
               width={160}
               height={48}
-              className="h-12 w-auto dark:invert"
+              className="h-12 w-auto"
               data-ai-hint="logo design"
               priority
             />
@@ -58,7 +57,6 @@ export default function Header() {
             <Phone className="h-4 w-4" />
             <span>(123) 456-7890</span>
           </a>
-          <ThemeToggle />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -79,7 +77,7 @@ export default function Header() {
                         alt="Odd Studio Logo"
                         width={120}
                         height={32}
-                        className="h-8 w-auto dark:invert"
+                        className="h-8 w-auto"
                         data-ai-hint="logo design"
                         priority
                       />
