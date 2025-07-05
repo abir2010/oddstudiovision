@@ -18,27 +18,18 @@ export default function HomePage() {
         title="We Are Odd. We Build Brands."
         subtitle="Odd Studio is a full-service creative agency that partners with ambitious brands to create work that makes a difference. We are strategists, creatives, and producers united by a common passion for building things that matter."
         className="bg-background"
+        imageSrc="https://placehold.co/1200x600.png"
+        imageAlt="Creative work showcase"
+        imageHint="creative work"
       >
-        <>
-          <div className="flex gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link href="/portfolio">View Our Work</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/services">Our Services</Link>
-            </Button>
-          </div>
-          <div className="mt-12 max-w-5xl mx-auto">
-              <Image
-                src="https://placehold.co/1200x600.png"
-                alt="Creative work showcase"
-                width={1200}
-                height={600}
-                className="rounded-lg shadow-lg object-cover aspect-video w-full"
-                data-ai-hint="creative work"
-              />
-          </div>
-        </>
+        <div className="flex gap-4 justify-center">
+          <Button asChild size="lg">
+            <Link href="/portfolio">View Our Work</Link>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link href="/services">Our Services</Link>
+          </Button>
+        </div>
       </HeroSection>
 
       <section className="py-24 bg-card">
