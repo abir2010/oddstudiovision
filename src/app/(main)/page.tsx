@@ -19,14 +19,42 @@ export default function HomePage() {
         subtitle="Odd Studio is a full-service creative agency that partners with ambitious brands to create work that makes a difference. We are strategists, creatives, and producers united by a common passion for building things that matter."
         className="bg-background"
       >
-        <div className="flex gap-4 justify-center">
-          <Button asChild size="lg">
-            <Link href="/portfolio">View Our Work</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link href="/services">Our Services</Link>
-          </Button>
-        </div>
+        <>
+          <div className="flex gap-4 justify-center">
+            <Button asChild size="lg">
+              <Link href="/portfolio">View Our Work</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/services">Our Services</Link>
+            </Button>
+          </div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="Abstract design"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover aspect-[3/2] w-full"
+                data-ai-hint="abstract design"
+              />
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="Team collaboration"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover aspect-[3/2] w-full"
+                data-ai-hint="team brainstorming"
+              />
+              <Image
+                src="https://placehold.co/600x400.png"
+                alt="Modern branding"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-lg object-cover aspect-[3/2] w-full"
+                data-ai-hint="vibrant color"
+              />
+          </div>
+        </>
       </HeroSection>
 
       <section className="py-24 bg-card">
