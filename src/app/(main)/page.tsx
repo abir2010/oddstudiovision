@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection
-        title="We Are Odd. We Build Brands."
+        title="Odd Studio. Reflection of your THOUGHTS."
         subtitle="Odd Studio is a full-service creative agency that partners with ambitious brands to create work that makes a difference. We are strategists, creatives, and producers united by a common passion for building things that matter."
         className="bg-background"
         imageSrc="https://i.ibb.co/YFsGkYB0/Untitled-design-4.png"
