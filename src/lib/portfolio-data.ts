@@ -15,7 +15,7 @@ export const portfolioItems: PortfolioItem[] = [
       title: 'Project Ventro CGI', 
       category: 'Videography', 
       image: '/ventro-banner-resized.png',
-      video: 'samples/elephants',
+      video: 'oddstudio/Ventro_CGI_kvgxdh',
       hint: 'cgi animation',
       description: 'A stunning CGI video for Project Ventro, showcasing their futuristic technology.'
     },
