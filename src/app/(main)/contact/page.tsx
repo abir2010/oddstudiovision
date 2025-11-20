@@ -62,7 +62,7 @@ export default function ContactPage() {
                     <div className="relative z-10 mt-12">
                          <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
                             <Image 
-                                src="https://i.ibb.co/7xcxfFL/boshundhara-map.png" 
+                                src="/map.png" 
                                 alt="Map to Odd Studio"
                                 width={600}
                                 height={400}

@@ -10,7 +10,11 @@ export default function PortfolioPage() {
   return (
     <>
       <HeroSection
-        title="SELECTED WORKS"
+      title={
+        <span>
+          SELECTED <span className="text-primary">WORKS</span>
+        </span>
+      }
         subtitle="A showcase of passion, precision, and creativity. Explore how we've helped brands tell their stories and achieve the extraordinary."
         className="bg-background"
         scrollingText="PORTFOLIO • CASES • WORK • "
