@@ -4,7 +4,7 @@ export const portfolioItems = [
       slug: 'project-ventro-cgi',
       title: 'Project Ventro CGI', 
       category: 'Videography', 
-      image: 'https://placehold.co/600x400.png', 
+      image: 'https://i.ibb.co/7JtbY31/ventro-banner-resized.png', 
       hint: 'cgi animation',
       description: 'A stunning CGI video for Project Ventro, showcasing their futuristic technology.'
     },
