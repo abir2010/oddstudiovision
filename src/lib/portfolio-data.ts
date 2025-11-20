@@ -23,8 +23,8 @@ export const portfolioItems: PortfolioItem[] = [
       slug: 'booktionary-com-bd',
       title: 'Booktionary.com.bd', 
       category: 'Branding', 
-      image: 'https://placehold.co/600x400.png', 
-      video: 'samples/sea-turtle',
+      image: '/booktionary banner.png', 
+      video: 'oddstudio/booktionary-short_alozuw',
       hint: 'website design',
       description: 'A complete branding and website design for the online bookstore, Booktionary.com.bd.'
     },
