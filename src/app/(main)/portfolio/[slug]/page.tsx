@@ -25,8 +25,8 @@ export default function PortfolioItemPage({ params }: { params: { slug: string }
 
             <article>
                 <Reveal>
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-8 shadow-lg bg-muted">
-                    <Image src={item.image} alt={item.title} fill className="object-contain" data-ai-hint={item.hint} priority/>
+                <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-8 shadow-lg">
+                    <Image src={item.image} alt={item.title} fill className="object-cover" data-ai-hint={item.hint} priority/>
                 </div>
                 </Reveal>
 
