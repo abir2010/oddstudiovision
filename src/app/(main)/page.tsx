@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       {/* Creative Homepage Hero */}
-      <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-background pt-20">
+      <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-background">
         {/* Dynamic Background Marquee */}
         <div className="absolute top-1/2 -translate-y-1/2 w-full -z-10 opacity-[0.03] rotate-[-5deg] scale-110 pointer-events-none">
              <Marquee duration="40s">
