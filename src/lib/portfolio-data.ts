@@ -25,8 +25,8 @@ export const portfolioItems = [
       description: 'Event photography for a major corporate event hosted by HSBC Bank.'
     },
     { 
-      slug: 'odd-signature-band-album-art-release',
-      title: 'Odd Signature Band Album Art Release', 
+      slug: 'odd-signature-album-art-release',
+      title: 'Odd Signature Album Art Release', 
       category: 'Branding', 
       image: 'https://placehold.co/600x400.png', 
       hint: 'album cover',
