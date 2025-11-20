@@ -1,70 +1,94 @@
-import HeroSection from '@/components/shared/hero-section';
-import { ContactForm } from '@/components/contact/contact-form';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import Image from 'next/image';
-import Reveal from '@/components/shared/reveal';
+import { ContactForm } from "@/components/contact/contact-form";
+import HeroSection from "@/components/shared/hero-section";
+import Reveal from "@/components/shared/reveal";
+import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
     <>
       <HeroSection
-        title="Get in Touch"
-        subtitle="Have a project in mind? We'd love to hear from you. Fill out the form below or reach out to us directly."
+        title="Let's Talk"
+        subtitle="Ready to start your next project? We're ready to listen. Drop us a line, and let's create something impactful together."
         className="bg-background"
       />
       <section className="container pb-24">
         <Reveal>
-            <div className="grid md:grid-cols-2 gap-16">
-                <div className="bg-card p-8 rounded-lg">
-                    <h2 className="text-3xl font-bold font-headline mb-6">Contact Information</h2>
-                    <div className="space-y-6">
-                        <div className="flex items-start gap-4">
-                            <div className="bg-primary/10 p-3 rounded-full">
-                            <Mail className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-semibold">Email</h3>
-                                <p className="text-muted-foreground">contact@oddstudiovision.com</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-4">
-                            <div className="bg-primary/10 p-3 rounded-full">
-                            <Phone className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-semibold">Phone</h3>
-                                <p className="text-muted-foreground">+88 01984-597890</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-4">
-                            <div className="bg-primary/10 p-3 rounded-full">
-                            <MapPin className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-semibold">Office</h3>
-                                <p className="text-muted-foreground">Bashundhara R/A, Dhaka, Bangladesh, 1229</p>
-                            </div>
-                        </div>
+          <div className="grid lg:grid-cols-12 gap-12 bg-card border rounded-[2rem] overflow-hidden shadow-2xl">
+            {/* Left Info Side */}
+            <div className="lg:col-span-5 bg-primary text-primary-foreground p-10 md:p-16 flex flex-col justify-between relative overflow-hidden">
+              {/* Abstract Pattern */}
+              <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full border-[20px] border-white" />
+                <div className="absolute -left-20 bottom-20 w-40 h-40 rounded-full bg-white" />
+              </div>
+
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold font-headline mb-8">
+                  Contact Information
+                </h2>
+                <div className="space-y-8">
+                  <div className="flex items-start gap-5">
+                    <div className="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
+                      <Mail className="h-6 w-6" />
                     </div>
-                    <div className="mt-8 pt-8 border-t">
-                        <h3 className="text-xl font-bold font-headline mb-4">Our Location</h3>
-                        <div className="aspect-video rounded-lg overflow-hidden border">
-                            <Image 
-                                src="/map.png" 
-                                alt="Map to Odd Studio"
-                                width={600}
-                                height={400}
-                                className="w-full h-full object-cover"
-                                data-ai-hint="city map"
-                            />
-                        </div>
+                    <div>
+                      <h3 className="font-bold text-lg opacity-90">Email Us</h3>
+                      <p className="text-lg font-light">
+                        contact@oddstudiovision.com
+                      </p>
                     </div>
+                  </div>
+                  <div className="flex items-start gap-5">
+                    <div className="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
+                      <Phone className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg opacity-90">Call Us</h3>
+                      <p className="text-lg font-light">+88 01984-597890</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-5">
+                    <div className="bg-white/20 p-3 rounded-xl backdrop-blur-sm">
+                      <MapPin className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg opacity-90">Visit Us</h3>
+                      <p className="text-lg font-light leading-snug">
+                        Bashundhara R/A, Dhaka,
+                        <br /> Bangladesh, 1229
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-card p-8 rounded-lg">
-                    <h2 className="text-3xl font-bold font-headline mb-6">Send Us a Message</h2>
-                    <ContactForm />
+              </div>
+
+              <div className="relative z-10 mt-12">
+                <div className="aspect-video rounded-xl overflow-hidden shadow-lg border border-white/20">
+                  <Image
+                    src="https://i.ibb.co/7xcxfFL/boshundhara-map.png"
+                    alt="Map to Odd Studio"
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                    data-ai-hint="city map"
+                  />
                 </div>
+              </div>
             </div>
+
+            {/* Right Form Side */}
+            <div className="lg:col-span-7 p-10 md:p-16 bg-background">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline mb-2">
+                Send a Message
+              </h2>
+              <p className="text-muted-foreground mb-10">
+                Fill out the form below and we'll get back to you within 24
+                hours.
+              </p>
+              <ContactForm />
+            </div>
+          </div>
         </Reveal>
       </section>
     </>
