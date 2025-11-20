@@ -37,7 +37,7 @@ export default function AutoAnimatedIcon({ children, className }: AutoAnimatedIc
         style={{ transform: 'translateZ(-50px)' }}
       ></div>
       <div
-        className="relative text-primary [&>svg]:w-32 [&>svg]:h-32 md:[&>svg]:w-48 md:[&>svg]:h-48"
+        className="relative text-primary"
         style={{ transform: 'translateZ(40px)' }}
       >
         {children}

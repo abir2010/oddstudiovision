@@ -15,7 +15,7 @@ type HeroSectionProps = {
 
 export default function HeroSection({ title, subtitle, children, className, imageSrc, imageAlt, imageHint }: HeroSectionProps) {
   return (
-    <section className={cn('relative py-20 md:py-32 bg-card overflow-hidden', className)}>
+    <section className={cn('relative py-20 md:py-32 overflow-hidden', className)}>
       {imageSrc && (
         <Image
           src={imageSrc}
@@ -28,7 +28,7 @@ export default function HeroSection({ title, subtitle, children, className, imag
       )}
       <div className="container text-center relative z-10">
         <Reveal>
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline bg-clip-text text-transparent bg-gradient-to-r from-primary to-foreground/80">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline">
             {title}
           </h1>
         </Reveal>
@@ -37,7 +37,7 @@ export default function HeroSection({ title, subtitle, children, className, imag
             {subtitle}
           </p>
         </Reveal>
-        {children && <Reveal delay={0.2}>{children}</Reveal>}
+        {children && <Reveal delay={0.2}><div className="mt-8 flex justify-center">{children}</div></Reveal>}
       </div>
     </section>
   );
