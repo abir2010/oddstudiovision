@@ -10,7 +10,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { name: "Facebook", href: "#", icon: Facebook },
+  { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61566564086102", icon: Facebook },
   { name: "Instagram", href: "#", icon: Instagram },
   { name: "LinkedIn", href: "#", icon: Linkedin },
 ];
