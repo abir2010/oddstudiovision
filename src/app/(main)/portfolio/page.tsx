@@ -1,16 +1,9 @@
 import HeroSection from '@/components/shared/hero-section';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
+import Link from 'next/link';
 import Reveal from '@/components/shared/reveal';
-
-const portfolioItems = [
-  { title: 'Project Alpha', category: 'Videography', image: 'https://placehold.co/600x400.png', hint: 'corporate video' },
-  { title: 'Brand Beta', category: 'Branding', image: 'https://placehold.co/600x400.png', hint: 'brand identity' },
-  { title: 'Campaign Gamma', category: 'Photography', image: 'https://placehold.co/600x400.png', hint: 'product photography' },
-  { title: 'Launch Delta', category: 'Strategic Planning', image: 'https://placehold.co/600x400.png', hint: 'marketing strategy' },
-  { title: 'Story Epsilon', category: 'Copywriting', image: 'https://placehold.co/600x400.png', hint: 'website content' },
-  { title: 'Growth Zeta', category: 'Business Development', image: 'https://placehold.co/600x400.png', hint: 'business growth' },
-];
+import { portfolioItems } from '@/lib/portfolio-data';
 
 export default function PortfolioPage() {
   return (
@@ -23,7 +16,8 @@ export default function PortfolioPage() {
       <section className="container pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {portfolioItems.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.1}>
+            <Reveal key={item.slug} delay={i * 0.1}>
+              <Link href={`/portfolio/${item.slug}`}>
                 <Card className="overflow-hidden group">
                 <CardContent className="p-0">
                     <div className="relative aspect-[4/3]">
@@ -35,6 +29,7 @@ export default function PortfolioPage() {
                     </div>
                 </CardContent>
                 </Card>
+              </Link>
             </Reveal>
           ))}
         </div>
