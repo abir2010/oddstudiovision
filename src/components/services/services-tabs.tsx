@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const servicesData = {
   videography: {
@@ -46,7 +47,6 @@ const servicesData = {
         title: "Content",
         items: [
             { title: "Model-Led Static Promotions", image: "https://placehold.co/600x400.png", hint: "model promotion" },
-            { title: "Graphics Design", image: "https://placehold.co/600x400.png", hint: "graphic design" }
         ]
       },
       { 
@@ -59,7 +59,6 @@ const servicesData = {
         title: "Creation",
         items: [
             { title: "Logo Design", image: "https://placehold.co/600x400.png", hint: "logo design" },
-            { title: "Carousel Poster", image: "https://placehold.co/600x400.png", hint: "carousel poster" },
             { title: "Product Photography", image: "https://placehold.co/600x400.png", hint: "product shoot" }
         ]
       }
@@ -126,25 +125,21 @@ export default function ServicesTabs() {
                         <h3 className="text-3xl font-bold font-headline mb-2">{service.label}</h3>
                         <p className="text-muted-foreground text-lg max-w-3xl mx-auto">{service.description}</p>
                     </div>
-                    <div className="space-y-12">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {(service.subServices as {title: string, items: {title: string, image: string, hint: string}[]}[]).map(category => (
-                            <div key={category.title}>
-                                <h4 className="text-2xl font-bold font-headline mb-6 text-center">{category.title}</h4>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                                    {category.items.map(item => (
-                                        <Card key={item.title} className="overflow-hidden group">
-                                            <CardContent className="p-0">
-                                                <div className="aspect-video relative">
-                                                    <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint} />
-                                                </div>
-                                                <div className="p-4">
-                                                    <h5 className="font-bold">{item.title}</h5>
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    ))}
-                                </div>
-                            </div>
+                            category.items.map(item => (
+                                <Card key={item.title} className="overflow-hidden group">
+                                    <CardContent className="p-0">
+                                        <div className="aspect-video relative">
+                                            <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint} />
+                                            <Badge variant="secondary" className="absolute top-3 right-3">{category.title}</Badge>
+                                        </div>
+                                        <div className="p-4">
+                                            <h5 className="font-bold">{item.title}</h5>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))
                         ))}
                     </div>
                 </div>
