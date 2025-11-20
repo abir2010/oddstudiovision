@@ -1,50 +1,75 @@
+
 export const portfolioItems = [
     { 
-      slug: 'project-alpha',
-      title: 'Project Alpha', 
+      slug: 'project-ventro-cgi',
+      title: 'Project Ventro CGI', 
       category: 'Videography', 
       image: 'https://placehold.co/600x400.png', 
-      hint: 'corporate video',
-      description: 'A compelling corporate video produced for Project Alpha, showcasing their innovative solutions and company culture.'
+      hint: 'cgi animation',
+      description: 'A stunning CGI video for Project Ventro, showcasing their futuristic technology.'
     },
     { 
-      slug: 'brand-beta',
-      title: 'Brand Beta', 
+      slug: 'booktionary-com-bd',
+      title: 'Booktionary.com.bd', 
       category: 'Branding', 
       image: 'https://placehold.co/600x400.png', 
-      hint: 'brand identity',
-      description: 'Complete brand identity overhaul for Brand Beta, including a new logo, color palette, and brand guidelines.'
+      hint: 'website design',
+      description: 'A complete branding and website design for the online bookstore, Booktionary.com.bd.'
     },
     { 
-      slug: 'campaign-gamma',
-      title: 'Campaign Gamma', 
+      slug: 'event-hsbc-bank',
+      title: 'Event HSBC Bank', 
       category: 'Photography', 
       image: 'https://placehold.co/600x400.png', 
-      hint: 'product photography',
-      description: 'A series of high-quality product photographs for Campaign Gamma, used in their e-commerce store and marketing materials.'
+      hint: 'corporate event',
+      description: 'Event photography for a major corporate event hosted by HSBC Bank.'
     },
     { 
-      slug: 'launch-delta',
-      title: 'Launch Delta', 
-      category: 'Strategic Planning', 
+      slug: 'odd-signature-band-album-art-release',
+      title: 'Odd Signature Band Album Art Release', 
+      category: 'Branding', 
       image: 'https://placehold.co/600x400.png', 
-      hint: 'marketing strategy',
-      description: 'A comprehensive marketing strategy for the launch of a new product, covering digital, social, and traditional media.'
+      hint: 'album cover',
+      description: 'Creative album art design for the band Odd Signature\'s latest release.'
     },
     { 
-      slug: 'story-epsilon',
-      title: 'Story Epsilon', 
-      category: 'Copywriting', 
+      slug: 'project-tasa',
+      title: 'Project TASA', 
+      category: 'Videography', 
       image: 'https://placehold.co/600x400.png', 
-      hint: 'website content',
-      description: 'Engaging website copy for Story Epsilon that tells their brand story and drives user engagement and conversions.'
+      hint: 'documentary film',
+      description: 'A documentary-style video for Project TASA, highlighting their social impact.'
     },
     { 
-      slug: 'growth-zeta',
-      title: 'Growth Zeta', 
-      category: 'Business Development', 
+      slug: 'project-spice-and-more',
+      title: 'Project Spice and More', 
+      category: 'Photography', 
       image: 'https://placehold.co/600x400.png', 
-      hint: 'business growth',
-      description: 'A business development strategy that identified new market opportunities and drove significant growth for Growth Zeta.'
+      hint: 'food photography',
+      description: 'Vibrant product photography for "Spice and More," a brand of exotic spices.'
     },
+    {
+      slug: 'project-arrivals-cave',
+      title: 'Project Arrivals Cave',
+      category: 'Videography',
+      image: 'https://placehold.co/600x400.png',
+      hint: 'promotional video',
+      description: 'A promotional video for Arrivals Cave, a new travel destination.'
+    },
+    {
+      slug: 'astrocade-gaming-zone',
+      title: 'Astrocade Gaming Zone',
+      category: 'Branding',
+      image: 'https://placehold.co/600x400.png',
+      hint: 'gaming logo',
+      description: 'A dynamic branding package for Astrocade Gaming Zone, including logo and marketing materials.'
+    },
+    {
+      slug: 'short-film-niaz-studio',
+      title: 'Short Film - Niaz Studio',
+      category: 'Videography',
+      image: 'https://placehold.co/600x400.png',
+      hint: 'film production',
+      description: 'A cinematic short film produced in collaboration with Niaz Studio.'
+    }
 ];
