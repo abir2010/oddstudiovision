@@ -10,7 +10,7 @@ export default function ContactPage() {
       <HeroSection
         title={
             <span>
-                LET'S <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">COLLABORATE</span>
+                LET'S <span className="text-primary">COLLABORATE</span>
             </span>
         }
         subtitle="Ready to start your next project? We're ready to listen. Drop us a line, and let's create something impactful together."
