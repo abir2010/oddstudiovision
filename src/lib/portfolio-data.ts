@@ -5,7 +5,7 @@ export const portfolioItems = [
       title: 'Project Ventro CGI', 
       category: 'Videography', 
       image: '/ventro-banner-resized.png',
-      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      video: 'samples/elephants',
       hint: 'cgi animation',
       description: 'A stunning CGI video for Project Ventro, showcasing their futuristic technology.'
     },
@@ -14,7 +14,7 @@ export const portfolioItems = [
       title: 'Booktionary.com.bd', 
       category: 'Branding', 
       image: 'https://placehold.co/600x400.png', 
-      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      video: 'samples/sea-turtle',
       hint: 'website design',
       description: 'A complete branding and website design for the online bookstore, Booktionary.com.bd.'
     },
@@ -22,7 +22,8 @@ export const portfolioItems = [
       slug: 'event-hsbc-bank',
       title: 'Event HSBC Bank', 
       category: 'Photography', 
-      image: 'https://placehold.co/600x400.png', 
+      image: 'https://placehold.co/600x400.png',
+      video: 'samples/cat', 
       hint: 'corporate event',
       description: 'Event photography for a major corporate event hosted by HSBC Bank.'
     },
@@ -30,7 +31,8 @@ export const portfolioItems = [
       slug: 'odd-signature-album-art',
       title: 'Odd Signature Album Art', 
       category: 'Branding', 
-      image: 'https://placehold.co/600x400.png', 
+      image: 'https://placehold.co/600x400.png',
+      video: 'samples/dog', 
       hint: 'album cover',
       description: 'Creative album art design for the band Odd Signature\'s latest release.'
     },
@@ -39,7 +41,7 @@ export const portfolioItems = [
       title: 'Project TASA', 
       category: 'Videography', 
       image: 'https://placehold.co/600x400.png', 
-      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      video: 'samples/boat',
       hint: 'documentary film',
       description: 'A documentary-style video for Project TASA, highlighting their social impact.'
     },
@@ -47,7 +49,8 @@ export const portfolioItems = [
       slug: 'project-spice-and-more',
       title: 'Project Spice and More', 
       category: 'Photography', 
-      image: 'https://placehold.co/600x400.png', 
+      image: 'https://placehold.co/600x400.png',
+      video: 'samples/coffee', 
       hint: 'food photography',
       description: 'Vibrant product photography for "Spice and More," a brand of exotic spices.'
     },
@@ -56,7 +59,7 @@ export const portfolioItems = [
       title: 'Project Arrivals Cave',
       category: 'Videography',
       image: 'https://placehold.co/600x400.png',
-      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      video: 'samples/surfing',
       hint: 'promotional video',
       description: 'A promotional video for Arrivals Cave, a new travel destination.'
     },
@@ -65,6 +68,7 @@ export const portfolioItems = [
       title: 'Astrocade Gaming Zone',
       category: 'Branding',
       image: 'https://placehold.co/600x400.png',
+      video: 'samples/gaming',
       hint: 'gaming logo',
       description: 'A dynamic branding package for Astrocade Gaming Zone, including logo and marketing materials.'
     },
@@ -73,7 +77,7 @@ export const portfolioItems = [
       title: 'Short Film - Niaz Studio',
       category: 'Videography',
       image: 'https://placehold.co/600x400.png',
-      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      video: 'samples/cinematic',
       hint: 'film production',
       description: 'A cinematic short film produced in collaboration with Niaz Studio.'
     }

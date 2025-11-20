@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: 'YOUR_CLOUD_NAME_HERE',
+  }
 };
 
 export default nextConfig;

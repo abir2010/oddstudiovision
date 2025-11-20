@@ -1,3 +1,5 @@
+'use client';
+
 import { portfolioItems } from '@/lib/portfolio-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -6,6 +8,8 @@ import Reveal from '@/components/shared/reveal';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { CldVideoPlayer } from 'next-cloudinary';
+import 'next-cloudinary/dist/cld-video-player.css';
 
 export default function PortfolioItemPage({ params }: { params: { slug: string } }) {
   const item = portfolioItems.find((p) => p.slug === params.slug);
@@ -25,7 +29,7 @@ export default function PortfolioItemPage({ params }: { params: { slug: string }
 
             <article>
                 <Reveal>
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-8 shadow-lg">
+                <div className="relative aspect-video rounded-lg overflow-hidden mb-8 shadow-lg">
                     <Image src={item.image} alt={item.title} fill className="object-cover" data-ai-hint={item.hint} priority/>
                 </div>
                 </Reveal>
@@ -42,15 +46,16 @@ export default function PortfolioItemPage({ params }: { params: { slug: string }
                         <div className="mt-12">
                            <h2 className="text-3xl font-bold font-headline mb-4">Project Video</h2>
                            <div className="aspect-video rounded-lg overflow-hidden border shadow-lg">
-                            <iframe
-                                width="100%"
-                                height="100%"
+                            <CldVideoPlayer
+                                width="1920"
+                                height="1080"
                                 src={item.video}
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                            ></iframe>
+                                colors={{
+                                  accent: '#E63946',
+                                  base: '#262626',
+                                  text: '#FFFFFF'
+                                }}
+                            />
                            </div>
                         </div>
                       </Reveal>
