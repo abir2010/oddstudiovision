@@ -39,12 +39,12 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center mb-8">
             <div>
                 <Image
-                src="https://placehold.co/600x400.png"
-                alt="Team working together"
+                src="/vision.png"
+                alt="Our Vision"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-lg"
-                data-ai-hint="team meeting"
+                data-ai-hint="abstract art"
                 />
             </div>
             <div>
@@ -65,12 +65,12 @@ export default function AboutPage() {
             </div>
             <div>
                 <Image
-                src="https://placehold.co/600x400.png"
-                alt="Team working together"
+                src="/mission.png"
+                alt="Our Mission"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-lg"
-                data-ai-hint="team meeting"
+                data-ai-hint="team collaboration"
                 />
             </div>
             </div>
