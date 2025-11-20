@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -109,5 +110,22 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities }: { addUtilities: any }) {
+      const newUtilities = {
+        '.text-stroke': {
+          '-webkit-text-stroke': '1px hsl(var(--foreground))',
+          'color': 'transparent',
+        },
+        '.outline-text-thick': {
+            '-webkit-text-stroke': '2px hsl(var(--primary))',
+            'color': 'transparent',
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    }
+  ],
 } satisfies Config;
+
+    
