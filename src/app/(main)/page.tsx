@@ -3,7 +3,7 @@ import Image from 'next/image';
 import HeroSection from '@/components/shared/hero-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { CheckCircle, Clapperboard, Camera, PenTool, Rocket, Megaphone } from 'lucide-react';
+import { CheckCircle, Clapperboard, Camera, PenTool, Rocket, Megaphone, Video } from 'lucide-react';
 import ClientCarousel from '@/components/shared/client-carousel';
 import Reveal from '@/components/shared/reveal';
 import Animated3DIcon from '@/components/shared/animated-3d-icon';
@@ -80,7 +80,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="h-64 md:h-96">
                 <AutoAnimatedIcon>
-                    <Camera />
+                    <Video className="w-48 h-48 md:w-64 md:h-64"/>
                 </AutoAnimatedIcon>
             </div>
             <div>
