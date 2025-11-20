@@ -4,7 +4,7 @@ export const portfolioItems = [
       slug: 'project-ventro-cgi',
       title: 'Project Ventro CGI', 
       category: 'Videography', 
-      image: '/ventro banner-resized.png', 
+      image: '/ventro banner.jpg', 
       hint: 'cgi animation',
       description: 'A stunning CGI video for Project Ventro, showcasing their futuristic technology.'
     },

@@ -20,8 +20,8 @@ export default function PortfolioPage() {
               <Link href={`/portfolio/${item.slug}`}>
                 <Card className="overflow-hidden group">
                 <CardContent className="p-0">
-                    <div className="relative aspect-[4/3]">
-                    <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint}/>
+                    <div className="relative aspect-[4/3] bg-muted">
+                    <Image src={item.image} alt={item.title} fill className="object-contain transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint}/>
                     </div>
                     <div className="p-6 bg-card">
                         <p className="text-sm text-primary font-medium">{item.category}</p>
