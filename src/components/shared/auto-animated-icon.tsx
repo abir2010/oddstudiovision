@@ -1,0 +1,46 @@
+'use client';
+
+import type { ReactNode } from 'react';
+import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+
+interface AutoAnimatedIconProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export default function AutoAnimatedIcon({ children, className }: AutoAnimatedIconProps) {
+  return (
+    <motion.div
+      className={cn(
+        'relative w-full h-full flex items-center justify-center rounded-lg',
+        className
+      )}
+      style={{
+        transformStyle: 'preserve-3d',
+      }}
+      animate={{
+        rotateY: [0, -10, 10, 0],
+        rotateX: [0, 5, -5, 0],
+        scale: [1, 1.02, 1.02, 1],
+      }}
+      transition={{
+        duration: 10,
+        ease: 'easeInOut',
+        repeat: Infinity,
+        repeatType: 'loop',
+      }}
+    >
+      <div
+        className="absolute inset-0 bg-primary/10 blur-3xl"
+        style={{ transform: 'translateZ(-50px)' }}
+      ></div>
+      <div
+        className="relative text-primary [&>svg]:w-32 [&>svg]:h-32 md:[&>svg]:w-48 md:[&>svg]:h-48"
+        style={{ transform: 'translateZ(20px)' }}
+      >
+        {children}
+      </div>
+    </motion.div>
+  );
+}

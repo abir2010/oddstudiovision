@@ -7,6 +7,7 @@ import { CheckCircle, Clapperboard, Camera, PenTool, Rocket, Megaphone } from 'l
 import ClientCarousel from '@/components/shared/client-carousel';
 import Reveal from '@/components/shared/reveal';
 import Animated3DIcon from '@/components/shared/animated-3d-icon';
+import AutoAnimatedIcon from '@/components/shared/auto-animated-icon';
 
 const services = [
   { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.', icon: Clapperboard },
@@ -77,15 +78,10 @@ export default function HomePage() {
       <section className="container py-24">
         <Reveal>
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <Image
-                src="https://placehold.co/600x400.png"
-                alt="Strategic Planning"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-lg"
-                data-ai-hint="team collaboration"
-              />
+            <div className="h-64 md:h-96">
+                <AutoAnimatedIcon>
+                    <Camera />
+                </AutoAnimatedIcon>
             </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold font-headline">Why Choose Odd?</h2>
