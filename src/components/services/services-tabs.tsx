@@ -46,7 +46,7 @@ const servicesData = {
       { 
         title: "Content",
         items: [
-            { title: "Model-Led Static Promotions", image: "https://placehold.co/600x400.png", hint: "model promotion" },
+            { title: "Model-Led Static Poster", image: "https://placehold.co/600x400.png", hint: "model promotion" },
         ]
       },
       { 
