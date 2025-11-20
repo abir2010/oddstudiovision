@@ -18,10 +18,10 @@ export default function PortfolioPage() {
           {portfolioItems.map((item, i) => (
             <Reveal key={item.slug} delay={i * 0.1}>
               <Link href={`/portfolio/${item.slug}`}>
-                <Card className="overflow-hidden group h-full flex flex-col">
+                <Card className="overflow-hidden group flex flex-col">
                 <CardContent className="p-0 flex flex-col flex-grow">
-                    <div className="relative aspect-video bg-muted">
-                    <Image src={item.image} alt={item.title} fill className="object-contain transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint}/>
+                    <div className="relative bg-black">
+                    <Image src={item.image} alt={item.title} width={600} height={400} className="object-contain transition-transform duration-300 group-hover:scale-105 w-full h-auto" data-ai-hint={item.hint}/>
                     </div>
                     <div className="p-6 bg-card flex-grow">
                         <p className="text-sm text-primary font-medium">{item.category}</p>
