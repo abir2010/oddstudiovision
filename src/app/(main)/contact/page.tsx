@@ -50,7 +50,7 @@ export default function ContactPage() {
                         <h3 className="text-xl font-bold font-headline mb-4">Our Location</h3>
                         <div className="aspect-video rounded-lg overflow-hidden border">
                             <Image 
-                                src="https://placehold.co/600x400.png" 
+                                src="https://i.ibb.co/68Zysw7/Screenshot-2024-07-26-at-2-00-08-PM.png" 
                                 alt="Map to Odd Studio"
                                 width={600}
                                 height={400}
