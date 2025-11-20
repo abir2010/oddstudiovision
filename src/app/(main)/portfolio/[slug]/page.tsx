@@ -37,7 +37,26 @@ export default function PortfolioItemPage({ params }: { params: { slug: string }
                     <p className="text-lg text-muted-foreground">{item.description}</p>
                     </Reveal>
 
-                    <Reveal delay={0.1}>
+                    {item.video && (
+                      <Reveal delay={0.1}>
+                        <div className="mt-12">
+                           <h2 className="text-3xl font-bold font-headline mb-4">Project Video</h2>
+                           <div className="aspect-video rounded-lg overflow-hidden border shadow-lg">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src={item.video}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
+                           </div>
+                        </div>
+                      </Reveal>
+                    )}
+
+                    <Reveal delay={0.2}>
                         <div className="mt-12 prose prose-lg max-w-none text-foreground prose-headings:text-foreground prose-strong:text-foreground">
                             <h2 className="text-3xl font-bold font-headline">Project Overview</h2>
                             <p>This is a detailed description of the project. It covers the client's brief, our creative process, and the outcomes we achieved. We focused on delivering a solution that not only met but exceeded expectations, resulting in a significant impact for their brand.</p>

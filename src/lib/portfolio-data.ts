@@ -4,7 +4,8 @@ export const portfolioItems = [
       slug: 'project-ventro-cgi',
       title: 'Project Ventro CGI', 
       category: 'Videography', 
-      image: '/ventro banner.jpg', 
+      image: '/ventro-banner-resized.png',
+      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       hint: 'cgi animation',
       description: 'A stunning CGI video for Project Ventro, showcasing their futuristic technology.'
     },
@@ -13,6 +14,7 @@ export const portfolioItems = [
       title: 'Booktionary.com.bd', 
       category: 'Branding', 
       image: 'https://placehold.co/600x400.png', 
+      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       hint: 'website design',
       description: 'A complete branding and website design for the online bookstore, Booktionary.com.bd.'
     },
@@ -37,6 +39,7 @@ export const portfolioItems = [
       title: 'Project TASA', 
       category: 'Videography', 
       image: 'https://placehold.co/600x400.png', 
+      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       hint: 'documentary film',
       description: 'A documentary-style video for Project TASA, highlighting their social impact.'
     },
@@ -53,6 +56,7 @@ export const portfolioItems = [
       title: 'Project Arrivals Cave',
       category: 'Videography',
       image: 'https://placehold.co/600x400.png',
+      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       hint: 'promotional video',
       description: 'A promotional video for Arrivals Cave, a new travel destination.'
     },
@@ -69,6 +73,7 @@ export const portfolioItems = [
       title: 'Short Film - Niaz Studio',
       category: 'Videography',
       image: 'https://placehold.co/600x400.png',
+      video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       hint: 'film production',
       description: 'A cinematic short film produced in collaboration with Niaz Studio.'
     }
