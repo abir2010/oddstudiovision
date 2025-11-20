@@ -53,9 +53,9 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center justify-end space-x-2">
-          <a href="tel:123-456-7890" className="hidden md:flex items-center gap-2 text-primary font-bold text-sm">
+          <a href="tel:+8801984597890" className="hidden md:flex items-center gap-2 text-primary font-bold text-sm">
             <Phone className="h-4 w-4" />
-            <span>(123) 456-7890</span>
+            <span>+88 01984-597890</span>
           </a>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -99,9 +99,9 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-auto p-4 border-t">
-                    <a href="tel:123-456-7890" onClick={() => setIsOpen(false)} className="flex w-full items-center justify-center gap-2 text-primary font-bold">
+                    <a href="tel:+8801984597890" onClick={() => setIsOpen(false)} className="flex w-full items-center justify-center gap-2 text-primary font-bold">
                         <Phone className="h-5 w-5" />
-                        <span>(123) 456-7890</span>
+                        <span>+88 01984-597890</span>
                     </a>
                 </div>
               </div>

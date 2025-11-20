@@ -24,7 +24,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold">Email</h3>
-                                <p className="text-muted-foreground">hello@oddstudio.com</p>
+                                <p className="text-muted-foreground">contact@oddstudiovision.com</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -33,7 +33,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold">Phone</h3>
-                                <p className="text-muted-foreground">(123) 456-7890</p>
+                                <p className="text-muted-foreground">+88 01984-597890</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -42,7 +42,7 @@ export default function ContactPage() {
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold">Office</h3>
-                                <p className="text-muted-foreground">123 Creative Lane, Innovation City, 12345</p>
+                                <p className="text-muted-foreground">Bashundhara R/A, Dhaka, Bangladesh, 1229</p>
                             </div>
                         </div>
                     </div>
