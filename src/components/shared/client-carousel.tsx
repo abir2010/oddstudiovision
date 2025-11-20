@@ -10,14 +10,13 @@ import {
 } from '@/components/ui/carousel';
 
 const clients: { name: string; logo: string }[] = [
-    { name: 'Globex', logo: '/clients/globex.svg' },
-    { name: 'Acme Corp', logo: '/clients/acme.svg' },
-    { name: 'Stark Industries', logo: '/clients/stark.svg' },
-    { name: 'Wayne Enterprises', logo: '/clients/wayne.svg' },
-    { name: 'Cyberdyne Systems', logo: '/clients/cyberdyne.svg' },
-    { name: 'Gekko & Co', logo: '/clients/gekko.svg' },
-    { name: 'Buy n Large', logo: '/clients/bnl.svg' },
-    { name: 'Vandelay Industries', logo: '/clients/vandelay.svg' },
+    { name: 'Astrocade', logo: '/clients/astrocade-logo.png' },
+    { name: 'Booktionary', logo: '/clients/booktionary-logo.png' },
+    { name: 'Fly Koro', logo: '/clients/flykoro-logo.png' },
+    { name: 'Rice n Spice', logo: '/clients/ricenspice-logo.png' },
+    { name: 'Tasa', logo: '/clients/tasa-logo.png' },
+    { name: 'Zesor', logo: '/clients/zesor-logo.png' },
+    { name: 'Import Park', logo: '/clients/importpark-logo.png' },
 ];
 
 export default function ClientCarousel() {
