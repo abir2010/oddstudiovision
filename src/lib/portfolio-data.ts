@@ -55,40 +55,40 @@ export const portfolioItems: PortfolioItem[] = [
       hint: 'documentary film',
       description: 'A documentary-style video for Project TASA, highlighting their social impact.'
     },
-    { 
-      slug: 'project-spice-and-more',
-      title: 'Project Spice and More', 
-      category: 'Photography', 
-      image: 'https://placehold.co/600x400.png',
-      video: 'samples/coffee', 
-      hint: 'food photography',
-      description: 'Vibrant product photography for "Spice and More," a brand of exotic spices.'
-    },
-    {
-      slug: 'project-arrivals-cave',
-      title: 'Project Arrivals Cave',
-      category: 'Videography',
-      image: 'https://placehold.co/600x400.png',
-      video: 'samples/surfing',
-      hint: 'promotional video',
-      description: 'A promotional video for Arrivals Cave, a new travel destination.'
-    },
-    {
-      slug: 'astrocade-gaming-zone',
-      title: 'Astrocade Gaming Zone',
-      category: 'Branding',
-      image: 'https://placehold.co/600x400.png',
-      video: 'samples/gaming',
-      hint: 'gaming logo',
-      description: 'A dynamic branding package for Astrocade Gaming Zone, including logo and marketing materials.'
-    },
-    {
-      slug: 'short-film-niaz-studio',
-      title: 'Short Film - Niaz Studio',
-      category: 'Videography',
-      image: 'https://placehold.co/600x400.png',
-      video: 'samples/cinematic',
-      hint: 'film production',
-      description: 'A cinematic short film produced in collaboration with Niaz Studio.'
-    }
+    // { 
+    //   slug: 'project-spice-and-more',
+    //   title: 'Project Spice and More', 
+    //   category: 'Photography', 
+    //   image: 'https://placehold.co/600x400.png',
+    //   video: 'samples/coffee', 
+    //   hint: 'food photography',
+    //   description: 'Vibrant product photography for "Spice and More," a brand of exotic spices.'
+    // },
+    // {
+    //   slug: 'project-arrivals-cave',
+    //   title: 'Project Arrivals Cave',
+    //   category: 'Videography',
+    //   image: 'https://placehold.co/600x400.png',
+    //   video: 'samples/surfing',
+    //   hint: 'promotional video',
+    //   description: 'A promotional video for Arrivals Cave, a new travel destination.'
+    // },
+    // {
+    //   slug: 'astrocade-gaming-zone',
+    //   title: 'Astrocade Gaming Zone',
+    //   category: 'Branding',
+    //   image: 'https://placehold.co/600x400.png',
+    //   video: 'samples/gaming',
+    //   hint: 'gaming logo',
+    //   description: 'A dynamic branding package for Astrocade Gaming Zone, including logo and marketing materials.'
+    // },
+    // {
+    //   slug: 'short-film-niaz-studio',
+    //   title: 'Short Film - Niaz Studio',
+    //   category: 'Videography',
+    //   image: 'https://placehold.co/600x400.png',
+    //   video: 'samples/cinematic',
+    //   hint: 'film production',
+    //   description: 'A cinematic short film produced in collaboration with Niaz Studio.'
+    // }
 ];
