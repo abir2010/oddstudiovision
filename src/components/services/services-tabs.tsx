@@ -6,6 +6,7 @@ import { Camera, Clapperboard, PenTool, Rocket, Megaphone } from "lucide-react";
 import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
 
 const servicesData = {
   videography: {
@@ -43,23 +44,23 @@ const servicesData = {
     subServices: [
       { 
         title: "Content",
-        subServices: [
-            { title: "Model-Led Static Promotions", video: "https://placehold.co/1280x720.png", hint: "model promotion" },
-            { title: "Graphics Design", video: "https://placehold.co/1280x720.png", hint: "graphic design" }
+        items: [
+            { title: "Model-Led Static Promotions", image: "https://placehold.co/600x400.png", hint: "model promotion" },
+            { title: "Graphics Design", image: "https://placehold.co/600x400.png", hint: "graphic design" }
         ]
       },
       { 
         title: "Brainstorming",
-        subServices: [
-            { title: "Static Commercial Poster", video: "https://placehold.co/1280x720.png", hint: "commercial poster" }
+        items: [
+            { title: "Static Commercial Poster", image: "https://placehold.co/600x400.png", hint: "commercial poster" }
         ]
       },
       {
         title: "Creation",
-        subServices: [
-            { title: "Logo Design", video: "https://placehold.co/1280x720.png", hint: "logo design" },
-            { title: "Carousel Poster", video: "https://placehold.co/1280x720.png", hint: "carousel poster" },
-            { title: "Product Photography", video: "https://placehold.co/1280x720.png", hint: "product shoot" }
+        items: [
+            { title: "Logo Design", image: "https://placehold.co/600x400.png", hint: "logo design" },
+            { title: "Carousel Poster", image: "https://placehold.co/600x400.png", hint: "carousel poster" },
+            { title: "Product Photography", image: "https://placehold.co/600x400.png", hint: "product shoot" }
         ]
       }
     ]
@@ -119,41 +120,84 @@ export default function ServicesTabs() {
 
       {Object.entries(servicesData).map(([key, service]) => (
         <TabsContent key={key} value={key} className="py-8">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div className="order-2 md:order-1">
-                    <h3 className="text-3xl font-bold font-headline mb-4">{service.label}</h3>
-                    <p className="text-muted-foreground text-lg">{service.description}</p>
+            {key === 'photography' ? (
+                 <div>
+                    <div className="text-center mb-12">
+                        <h3 className="text-3xl font-bold font-headline mb-2">{service.label}</h3>
+                        <p className="text-muted-foreground text-lg max-w-3xl mx-auto">{service.description}</p>
+                    </div>
+                    <div className="space-y-12">
+                        {(service.subServices as {title: string, items: {title: string, image: string, hint: string}[]}[]).map(category => (
+                            <div key={category.title}>
+                                <h4 className="text-2xl font-bold font-headline mb-6 text-center">{category.title}</h4>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {category.items.map(item => (
+                                        <Card key={item.title} className="overflow-hidden group">
+                                            <CardContent className="p-0">
+                                                <div className="aspect-video relative">
+                                                    <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint} />
+                                                </div>
+                                                <div className="p-4">
+                                                    <h5 className="font-bold">{item.title}</h5>
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="order-1 md:order-2">
-                    {service.subServices ? (
-                        <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
-                          {service.subServices.map((sub, index) => (
-                              <AccordionItem value={`item-${index}`} key={sub.title}>
-                                  <AccordionTrigger className="text-lg font-semibold hover:no-underline">{sub.title}</AccordionTrigger>
-                                  <AccordionContent>
-                                    {sub.subServices ? (
-                                        <Accordion type="single" collapsible defaultValue="nested-item-0" className="w-full pl-4 border-l">
-                                            {sub.subServices.map((nestedSub, nestedIndex) => (
-                                                <AccordionItem value={`nested-item-${nestedIndex}`} key={nestedSub.title} className="border-b-0">
-                                                    <AccordionTrigger>{nestedSub.title}</AccordionTrigger>
-                                                    <AccordionContent className="pl-4">
-                                                        {nestedSub.video && <VideoPlaceholder src={nestedSub.video} title={nestedSub.title} hint={nestedSub.hint || ''} />}
-                                                    </AccordionContent>
-                                                </AccordionItem>
-                                            ))}
-                                        </Accordion>
-                                    ) : (
-                                        sub.video && <VideoPlaceholder src={sub.video} title={sub.title} hint={sub.hint || ''} />
-                                    )}
-                                  </AccordionContent>
-                              </AccordionItem>
-                          ))}
-                        </Accordion>
-                    ) : (
-                        service.video && <VideoPlaceholder src={service.video} title={service.label} hint={service.hint || ''}/>
-                    )}
+            ) : (
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div className="order-2 md:order-1">
+                        <h3 className="text-3xl font-bold font-headline mb-4">{service.label}</h3>
+                        <p className="text-muted-foreground text-lg">{service.description}</p>
+                    </div>
+                    <div className="order-1 md:order-2">
+                        {(service.subServices && 'subServices' in service.subServices[0]) ? (
+                            <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+                            {service.subServices.map((sub, index) => (
+                                <AccordionItem value={`item-${index}`} key={sub.title}>
+                                    <AccordionTrigger className="text-lg font-semibold hover:no-underline">{sub.title}</AccordionTrigger>
+                                    <AccordionContent>
+                                      {'subServices' in sub && sub.subServices ? (
+                                          <Accordion type="single" collapsible defaultValue="nested-item-0" className="w-full pl-4 border-l">
+                                              {(sub.subServices as {title: string, video?: string, hint?: string}[]).map((nestedSub, nestedIndex) => (
+                                                  <AccordionItem value={`nested-item-${nestedIndex}`} key={nestedSub.title} className="border-b-0">
+                                                      <AccordionTrigger>{nestedSub.title}</AccordionTrigger>
+                                                      <AccordionContent className="pl-4">
+                                                          {nestedSub.video && <VideoPlaceholder src={nestedSub.video} title={nestedSub.title} hint={nestedSub.hint || ''} />}
+                                                      </AccordionContent>
+                                                  </AccordionItem>
+                                              ))}
+                                          </Accordion>
+                                      ) : (
+                                          (sub as {video?: string, title: string, hint?: string}).video && <VideoPlaceholder src={sub.video!} title={sub.title} hint={sub.hint || ''} />
+                                      )}
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ))}
+                          </Accordion>
+                        ) : (service.subServices && 'video' in service.subServices[0]) ? (
+                             <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+                                {(service.subServices as {title: string, video: string, hint: string}[]).map((sub, index) => (
+                                    <AccordionItem value={`item-${index}`} key={sub.title}>
+                                        <AccordionTrigger className="text-lg font-semibold hover:no-underline">{sub.title}</AccordionTrigger>
+                                        <AccordionContent>
+                                            <VideoPlaceholder src={sub.video} title={sub.title} hint={sub.hint || ''} />
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                ))}
+                             </Accordion>
+                        )
+                        
+                        : (
+                            (service as {video?: string, label: string, hint?: string}).video && <VideoPlaceholder src={(service as {video: string}).video} title={service.label} hint={service.hint || ''}/>
+                        )}
+                    </div>
                 </div>
-            </div>
+            )}
         </TabsContent>
       ))}
     </Tabs>
