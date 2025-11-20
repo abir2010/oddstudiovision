@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <>
       {/* Creative Homepage Hero */}
-      <section className="relative min-h-[100vh] flex flex-col justify-center overflow-hidden bg-background">
+      <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-background">
         {/* Dynamic Background Marquee */}
         <div className="absolute top-1/2 -translate-y-1/2 w-full -z-10 opacity-[0.03] rotate-[-5deg] scale-110 pointer-events-none">
              <Marquee duration="40s">
@@ -40,7 +40,7 @@ export default function HomePage() {
                         <Zap className="w-4 h-4 fill-current" />
                         <span>Redefining Digital Experiences</span>
                     </div>
-                    <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold font-headline leading-[0.85] tracking-tighter mb-8">
+                    <h1 className="text-7xl sm:text-7xl md:text-8xl font-bold font-headline leading-[0.85] tracking-tighter mb-8">
                         Reflection of your <br/>
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600">THOUGHTS.</span>
                     </h1>
