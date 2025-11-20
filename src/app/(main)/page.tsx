@@ -3,16 +3,17 @@ import Image from 'next/image';
 import HeroSection from '@/components/shared/hero-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Clapperboard, Camera, PenTool, Rocket, Megaphone } from 'lucide-react';
 import ClientCarousel from '@/components/shared/client-carousel';
 import Reveal from '@/components/shared/reveal';
+import Animated3DIcon from '@/components/shared/animated-3d-icon';
 
 const services = [
-  { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.', image: 'https://placehold.co/600x400.png', hint: 'videography setup' },
-  { title: 'Photography', description: 'High-quality imagery that tells your brand’s story with impact.', image: 'https://placehold.co/600x400.png', hint: 'photographer action' },
-  { title: 'Copywriting', description: 'Persuasive copy that resonates with your audience and drives action.', image: 'https://placehold.co/600x400.png', hint: 'writing desk' },
-  { title: 'Strategy & Branding', description: 'Comprehensive strategies for business development, branding, and strategic planning.', image: 'https://placehold.co/600x400.png', hint: 'brand moodboard' },
-  { title: 'Online Marketing', description: 'Data-driven online marketing to boost your reach and conversions.', image: 'https://placehold.co/600x400.png', hint: 'digital analytics' },
+  { title: 'Videography', description: 'Crafting compelling visual narratives that captivate and convert.', icon: Clapperboard },
+  { title: 'Photography', description: 'High-quality imagery that tells your brand’s story with impact.', icon: Camera },
+  { title: 'Copywriting', description: 'Persuasive copy that resonates with your audience and drives action.', icon: PenTool },
+  { title: 'Strategy & Branding', description: 'Comprehensive strategies for business development, branding, and strategic planning.', icon: Rocket },
+  { title: 'Online Marketing', description: 'Data-driven online marketing to boost your reach and conversions.', icon: Megaphone },
 ];
 
 export default function HomePage() {
@@ -50,14 +51,8 @@ export default function HomePage() {
             {services.map((service, i) => (
               <Reveal key={service.title} delay={0.1 * i}>
                 <Card className="overflow-hidden group flex flex-col h-full">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image
-                          src={service.image}
-                          alt={service.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={service.hint}
-                      />
+                  <div className="relative aspect-video">
+                      <Animated3DIcon Icon={service.icon} />
                   </div>
                   <CardHeader>
                     <CardTitle className="font-headline">{service.title}</CardTitle>
