@@ -46,20 +46,20 @@ const servicesData = {
       { 
         title: "Content",
         items: [
-            { title: "Model-Led Static Poster", image: "https://placehold.co/600x400.png", hint: "model promotion" },
+            { title: "Model-Led Static Poster", image: "/model-led-static-poster.png", hint: "model promotion" },
         ]
       },
       { 
         title: "Brainstorming",
         items: [
-            { title: "Static Commercial Poster", image: "https://placehold.co/600x400.png", hint: "commercial poster" }
+            { title: "Static Commercial Poster", image: "/static-commercial-poster.png", hint: "commercial poster" }
         ]
       },
       {
         title: "Creation",
         items: [
-            { title: "Logo Design", image: "https://placehold.co/600x400.png", hint: "logo design" },
-            { title: "Product Photography", image: "https://placehold.co/600x400.png", hint: "product shoot" }
+            { title: "Logo Design", image: "/logo-design.png", hint: "logo design" },
+            { title: "Product Photography", image: "/product-photography.png", hint: "product shoot" }
         ]
       }
     ]
@@ -130,7 +130,7 @@ export default function ServicesTabs() {
                             category.items.map(item => (
                                 <Card key={item.title} className="overflow-hidden group">
                                     <CardContent className="p-0">
-                                        <div className="aspect-video relative">
+                                        <div className="aspect-[4/3] relative">
                                             <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint} />
                                             <Badge variant="secondary" className="absolute top-3 right-3">{category.title}</Badge>
                                         </div>
