@@ -1,16 +1,15 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import type { LucideProps } from 'lucide-react';
-import type { ForwardRefExoticComponent, RefAttributes } from 'react';
 
 interface Animated3DIconProps {
-  Icon: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>;
+  children: ReactNode;
   className?: string;
 }
 
-export default function Animated3DIcon({ Icon, className }: Animated3DIconProps) {
+export default function Animated3DIcon({ children, className }: Animated3DIconProps) {
   return (
     <motion.div
       className={cn(
@@ -31,10 +30,12 @@ export default function Animated3DIcon({ Icon, className }: Animated3DIconProps)
         className="absolute inset-0 bg-primary/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{ transform: 'translateZ(-50px)' }}
       ></div>
-      <Icon
-        className="w-16 h-16 text-primary group-hover:text-primary-foreground transition-colors duration-300"
+      <div
+        className="relative text-primary group-hover:text-primary-foreground transition-colors duration-300 [&>svg]:w-16 [&>svg]:h-16"
         style={{ transform: 'translateZ(20px)' }}
-      />
+      >
+        {children}
+      </div>
       <div
         className="absolute inset-0 rounded-lg"
         style={{

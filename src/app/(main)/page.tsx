@@ -52,7 +52,9 @@ export default function HomePage() {
               <Reveal key={service.title} delay={0.1 * i}>
                 <Card className="overflow-hidden group flex flex-col h-full">
                   <div className="relative aspect-video">
-                      <Animated3DIcon Icon={service.icon} />
+                      <Animated3DIcon>
+                        <service.icon />
+                      </Animated3DIcon>
                   </div>
                   <CardHeader>
                     <CardTitle className="font-headline">{service.title}</CardTitle>
