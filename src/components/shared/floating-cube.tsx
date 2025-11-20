@@ -1,54 +1,88 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 export default function FloatingCube() {
-  // Cube face styles
-  const faceStyle = "absolute inset-0 border-2 border-primary/40 bg-primary/5 backdrop-blur-sm flex items-center justify-center shadow-[0_0_15px_rgba(230,57,70,0.2)]";
-  
+  // Shared aesthetic styles for the wireframe elements
+  const borderStyle = "absolute inset-0 border border-primary/60 bg-primary/5 backdrop-blur-[2px] shadow-[0_0_15px_rgba(230,57,70,0.1)] box-border";
+  const circleStyle = "absolute border-2 border-primary/80 rounded-full bg-primary/5 backdrop-blur-sm flex items-center justify-center shadow-[0_0_20px_rgba(230,57,70,0.3)]";
+
   return (
-    <div className="w-48 h-48 sm:w-64 sm:h-64 relative" style={{ perspective: '1200px' }}>
+    // Increased container size and perspective for a larger presence
+    <div className="w-[500px] h-[500px] relative flex items-center justify-center" style={{ perspective: '1500px' }}>
       <motion.div
-        className="w-full h-full relative"
-        style={{ transformStyle: 'preserve-3d' }}
+        className="relative w-40 h-24"
+        // Added scale: 2.2 to significantly increase the object size
+        style={{ transformStyle: 'preserve-3d', scale: 2.2 }}
         animate={{ 
             rotateX: [0, 360], 
-            rotateY: [0, 720],
-            rotateZ: [0, 180]
+            rotateY: [0, 360],
         }}
         transition={{ 
-            duration: 25, 
+            duration: 20, 
             repeat: Infinity, 
-            ease: 'linear' 
+            ease: "linear" 
         }}
       >
-        {/* Front */}
-        <div className={faceStyle} style={{ transform: 'translateZ(96px) sm:translateZ(128px)' }}>
-            <div className="w-4 h-4 bg-primary/50 rounded-full" />
+        {/* --- CAMERA BODY (Rectangular Prism) --- */}
+        {/* Front Face */}
+        <div className={cn(borderStyle, "w-40 h-24")} style={{ transform: 'translateZ(30px)' }}>
+             {/* Lens Mount Detail */}
+             <div className="absolute top-1/2 left-1/2 w-16 h-16 border border-primary/30 rounded-full -translate-x-1/2 -translate-y-1/2" />
         </div>
-        {/* Back */}
-        <div className={faceStyle} style={{ transform: 'rotateY(180deg) translateZ(96px) sm:translateZ(128px)' }}>
-             <div className="w-4 h-4 bg-primary/50 rounded-full" />
+        {/* Back Face */}
+        <div className={cn(borderStyle, "w-40 h-24")} style={{ transform: 'rotateY(180deg) translateZ(30px)' }}>
+            {/* Viewfinder Detail */}
+            <div className="absolute top-2 right-2 w-8 h-6 border border-primary/50 bg-primary/10" />
         </div>
-        {/* Right */}
-        <div className={faceStyle} style={{ transform: 'rotateY(90deg) translateZ(96px) sm:translateZ(128px)' }}>
-             <div className="w-4 h-4 bg-primary/50 rounded-full" />
+        {/* Right Face */}
+        <div className={cn(borderStyle, "w-12 h-24")} style={{ transform: 'rotateY(90deg) translateZ(140px)', width: '60px', left: '-30px' }} />
+        {/* Left Face */}
+        <div className={cn(borderStyle, "w-12 h-24")} style={{ transform: 'rotateY(-90deg) translateZ(100px)', width: '60px', left: '130px' }} />
+        {/* Top Face */}
+        <div className={cn(borderStyle, "w-40 h-12")} style={{ transform: 'rotateX(90deg) translateZ(30px)', height: '60px', top: '-30px' }} />
+        {/* Bottom Face */}
+        <div className={cn(borderStyle, "w-40 h-12")} style={{ transform: 'rotateX(-90deg) translateZ(54px)', height: '60px', top: '54px' }} />
+
+
+        {/* --- LENS ASSEMBLY (Floating Rings in Front) --- */}
+        <div style={{ transformStyle: 'preserve-3d', transform: 'translateZ(40px)' }}>
+            <div className={cn(circleStyle, "w-16 h-16 top-4 left-12")} style={{ transform: 'translateZ(10px)' }} />
+            <div className={cn(circleStyle, "w-14 h-14 top-5 left-[52px]")} style={{ transform: 'translateZ(30px)' }} />
+            <div className={cn(circleStyle, "w-12 h-12 top-6 left-[56px]")} style={{ transform: 'translateZ(50px)' }}>
+                {/* Glass Reflection Element */}
+                 <div className="w-8 h-8 bg-gradient-to-tr from-primary/40 to-transparent rounded-full blur-[2px]" />
+            </div>
         </div>
-        {/* Left */}
-        <div className={faceStyle} style={{ transform: 'rotateY(-90deg) translateZ(96px) sm:translateZ(128px)' }}>
-             <div className="w-4 h-4 bg-primary/50 rounded-full" />
+
+        {/* --- FILM REELS (Floating on Top) --- */}
+        <div style={{ transformStyle: 'preserve-3d', transform: 'translateY(-50px)' }}>
+             {/* Left Reel */}
+             <motion.div 
+                className={cn(circleStyle, "w-20 h-20 -top-6 left-2")} 
+                style={{ transform: 'rotateY(90deg)' }}
+                animate={{ rotateZ: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+             >
+                <div className="w-2 h-2 bg-primary rounded-full" />
+                <div className="w-16 h-16 border border-dashed border-primary/50 rounded-full absolute" />
+             </motion.div>
+             
+             {/* Right Reel */}
+             <motion.div 
+                className={cn(circleStyle, "w-20 h-20 -top-6 right-2")} 
+                style={{ transform: 'rotateY(90deg)' }}
+                animate={{ rotateZ: 360 }}
+                transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+             >
+                <div className="w-2 h-2 bg-primary rounded-full" />
+                <div className="w-16 h-16 border border-dashed border-primary/50 rounded-full absolute" />
+             </motion.div>
         </div>
-        {/* Top */}
-        <div className={faceStyle} style={{ transform: 'rotateX(90deg) translateZ(96px) sm:translateZ(128px)' }}>
-             <div className="w-4 h-4 bg-primary/50 rounded-full" />
-        </div>
-        {/* Bottom */}
-        <div className={faceStyle} style={{ transform: 'rotateX(-90deg) translateZ(96px) sm:translateZ(128px)' }}>
-             <div className="w-4 h-4 bg-primary/50 rounded-full" />
-        </div>
-        
-        {/* Inner Core */}
-        <div className="absolute top-1/2 left-1/2 w-16 h-16 -translate-x-1/2 -translate-y-1/2 bg-primary/20 blur-md rounded-full animate-pulse" style={{ transform: 'translateZ(0)' }} />
+
+        {/* --- GLOW CORE --- */}
+        <div className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 bg-primary/5 blur-xl rounded-full" />
       </motion.div>
     </div>
   );
