@@ -14,16 +14,16 @@ export default function PortfolioPage() {
         className="bg-background"
       />
       <section className="container pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           {portfolioItems.map((item, i) => (
             <Reveal key={item.slug} delay={i * 0.1}>
               <Link href={`/portfolio/${item.slug}`}>
-                <Card className="overflow-hidden group">
-                <CardContent className="p-0">
-                    <div className="relative aspect-[4/3] bg-muted">
+                <Card className="overflow-hidden group h-full flex flex-col">
+                <CardContent className="p-0 flex flex-col flex-grow">
+                    <div className="relative aspect-video bg-muted">
                     <Image src={item.image} alt={item.title} fill className="object-contain transition-transform duration-300 group-hover:scale-105" data-ai-hint={item.hint}/>
                     </div>
-                    <div className="p-6 bg-card">
+                    <div className="p-6 bg-card flex-grow">
                         <p className="text-sm text-primary font-medium">{item.category}</p>
                         <h3 className="text-xl font-bold font-headline mt-1">{item.title}</h3>
                     </div>
