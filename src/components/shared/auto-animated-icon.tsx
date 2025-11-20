@@ -18,14 +18,15 @@ export default function AutoAnimatedIcon({ children, className }: AutoAnimatedIc
       )}
       style={{
         transformStyle: 'preserve-3d',
+        perspective: 800,
       }}
       animate={{
-        rotateY: [0, -10, 10, 0],
-        rotateX: [0, 5, -5, 0],
-        scale: [1, 1.02, 1.02, 1],
+        rotateY: [0, -15, 15, -10, 10, 0],
+        rotateX: [0, 10, -10, 8, -8, 0],
+        scale: [1, 1.05, 1, 1.05, 1, 1],
       }}
       transition={{
-        duration: 10,
+        duration: 12,
         ease: 'easeInOut',
         repeat: Infinity,
         repeatType: 'loop',
@@ -37,7 +38,7 @@ export default function AutoAnimatedIcon({ children, className }: AutoAnimatedIc
       ></div>
       <div
         className="relative text-primary [&>svg]:w-32 [&>svg]:h-32 md:[&>svg]:w-48 md:[&>svg]:h-48"
-        style={{ transform: 'translateZ(20px)' }}
+        style={{ transform: 'translateZ(40px)' }}
       >
         {children}
       </div>
