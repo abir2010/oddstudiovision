@@ -41,9 +41,8 @@ export default function HomePage() {
                         <span>Redefining Digital Experiences</span>
                     </div>
                     <h1 className="text-7xl sm:text-8xl md:text-9xl font-bold font-headline leading-[0.85] tracking-tighter mb-8">
-                        MAKE IT <br/>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600">IMPOSSIBLE</span> <br/>
-                        TO IGNORE
+                        Reflection of your <br/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600">THOUGHTS.</span>
                     </h1>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -57,7 +56,7 @@ export default function HomePage() {
                             <Link href="/portfolio">View Selected Work</Link>
                         </Button>
                         <Button asChild size="lg" variant="ghost" className="text-lg px-8 h-16 rounded-full hover:bg-secondary/50 transition-all border-2 border-transparent hover:border-border">
-                            <Link href="/contact">Book a Consultation</Link>
+                            <Link href="/contact">Book a Service</Link>
                         </Button>
                     </div>
                 </Reveal>
@@ -73,7 +72,7 @@ export default function HomePage() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 opacity-50 animate-bounce">
             <span className="text-xs uppercase tracking-widest">Scroll</span>
             <ArrowRight className="w-4 h-4 rotate-90" />
         </div>
@@ -193,5 +192,3 @@ export default function HomePage() {
     </>
   );
 }
-
-    
