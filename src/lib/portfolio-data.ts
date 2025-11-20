@@ -32,8 +32,8 @@ export const portfolioItems: PortfolioItem[] = [
       slug: 'event-hsbc-bank',
       title: 'Event HSBC Bank', 
       category: 'Photography', 
-      image: 'https://placehold.co/600x400.png',
-      video: 'samples/cat', 
+      image: '/hsbc banner.jpg',
+      video: 'oddstudio/hsbc-short_gqwwzy', 
       hint: 'corporate event',
       description: 'Event photography for a major corporate event hosted by HSBC Bank.'
     },
