@@ -1,5 +1,15 @@
 
-export const portfolioItems = [
+export type PortfolioItem = { 
+  slug: string;
+  title: string;
+  category: string;
+  image: string;
+  video?: string;
+  hint: string;
+  description: string;
+};
+
+export const portfolioItems: PortfolioItem[] = [
     { 
       slug: 'project-ventro-cgi',
       title: 'Project Ventro CGI', 
