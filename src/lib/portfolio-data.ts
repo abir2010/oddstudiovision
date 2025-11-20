@@ -41,8 +41,8 @@ export const portfolioItems: PortfolioItem[] = [
       slug: 'odd-signature-album-art',
       title: 'Odd Signature Album Art', 
       category: 'Branding', 
-      image: 'https://placehold.co/600x400.png',
-      video: 'samples/dog', 
+      image: '/odd-sign-banner.png',
+      video: 'oddstudio/odd-signature-short_n1pvi0', 
       hint: 'album cover',
       description: 'Creative album art design for the band Odd Signature\'s latest release.'
     },
@@ -50,8 +50,8 @@ export const portfolioItems: PortfolioItem[] = [
       slug: 'project-tasa',
       title: 'Project TASA', 
       category: 'Videography', 
-      image: 'https://placehold.co/600x400.png', 
-      video: 'samples/boat',
+      image: '/tasa-banner.png', 
+      video: 'oddstudio/TASA_Shoot-short_dqohc3',
       hint: 'documentary film',
       description: 'A documentary-style video for Project TASA, highlighting their social impact.'
     },
